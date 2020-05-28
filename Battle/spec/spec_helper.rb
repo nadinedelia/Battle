@@ -18,6 +18,14 @@ Capybara.app = Battle
 # the additional setup, and require it from the spec files that actually need
 # it.
 #
+ENV['RACK_ENV'] = 'test'
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+
+Capybara.app = Battle
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -33,6 +41,8 @@ RSpec.configure do |config|
     #     # => "be bigger than 2"
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
+
+
 
   # rspec-mocks config goes here. You can use an alternate test double
   # library (such as bogus or mocha) by changing the `mock_with` option here.
