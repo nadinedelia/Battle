@@ -1,3 +1,3 @@
 # Battle
 
-![](img/pikachu.jpg)
+![](pikachu.jpg)
